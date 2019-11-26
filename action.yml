@@ -1,0 +1,15 @@
+name: 'scope-for-dotnet'
+description: 'Scope agent for dotnet'
+inputs:
+  command:  # command to run inside the scope-run wrapper
+    description: 'Command to run inside the scope-run wrapper'
+    required: false
+  apikey: # api key
+    description: 'Scope api key'
+    required: false
+  dsn: # scope dsn
+    description: 'Scope dsn'
+    required: false
+runs:
+  using: 'node12'
+  main: 'dist/index.js'

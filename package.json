@@ -1,0 +1,27 @@
+{
+  "name": "scope-for-dotnet-gh",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Scope for dotnet GitHub action",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build ./src/index.js",
+    "run": "node ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/undefinedlabs/scope-for-dotnet-gh.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/undefinedlabs/scope-for-dotnet-gh/issues"
+  },
+  "homepage": "https://github.com/undefinedlabs/scope-for-dotnet-gh#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.0",
+    "@actions/exec": "^1.0.1"
+  }
+}
