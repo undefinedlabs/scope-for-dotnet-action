@@ -51,12 +51,17 @@ async function run() {
 }
 
 async function ExecScopeRun(homePath, command, cwd, apiKey, dsn) {
+  let envVars = Object.assign({}, process.env);
+  if (apiKey) {
+    envVars[SCOPE_APIKEY] = apiKey;
+  }
+  if (dsn) {
+    envVars[SCOPE_DSN] = dsn;
+  }
+  console.log(envVars);
   await exec.exec(`${homePath}/.dotnet/tools/scope-run`, [ command ], {
     cwd: cwd,
-    env: {
-      SCOPE_APIKEY : apiKey,
-      SCOPE_DSN : dsn,
-    }
+    env: envVars
   });
 }
 
