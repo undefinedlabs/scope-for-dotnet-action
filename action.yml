@@ -10,6 +10,10 @@ inputs:
   dsn: # scope dsn
     description: 'Scope dsn'
     required: false
+  use-solutions: # use solutions file
+    description: 'Use solutions files'
+    required: false
+    default: true
 runs:
   using: 'node12'
   main: 'dist/index.js'
