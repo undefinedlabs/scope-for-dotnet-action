@@ -1011,9 +1011,7 @@ async function run() {
       console.log(`ApiKey has been set.`);
     }
 
-    await exec.exec('dotnet tool install -g ScopeAgent.Runner', null, {
-      ignoreReturnCode: true
-    });
+    await exec.exec('dotnet tool install -g ScopeAgent.Runner', null, { ignoreReturnCode: true });
 
     if (useSolutions) {
       const slnFiles = findFileByExtension(process.cwd(), "sln");
@@ -1041,7 +1039,6 @@ async function ExecScopeRun(homePath, command, cwd, apiKey, dsn) {
   if (dsn) {
     envVars[SCOPE_DSN] = dsn;
   }
-  console.log(envVars);
   await exec.exec(`${homePath}/.dotnet/tools/scope-run`, [ command ], {
     cwd: cwd,
     env: envVars
