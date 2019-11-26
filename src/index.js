@@ -15,7 +15,6 @@ async function run() {
     const dsn = core.getInput('dsn') || process.env[SCOPE_DSN];
     const useSolutions = core.getInput('use-solutions') || true;
 
-
     if (!dsn && !apiKey) {
       throw Error('Cannot find the DSN or ApiKey');
     }
