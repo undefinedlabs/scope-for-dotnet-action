@@ -5,10 +5,10 @@ inputs:
     description: 'Command to run inside the scope-run wrapper'
     required: false
   apikey: # api key
-    description: 'Scope api key'
+    description: 'Scope API key'
     required: false
   dsn: # scope dsn
-    description: 'Scope dsn'
+    description: 'Scope DSN'
     required: false
   use-solutions: # use solutions file
     description: 'Use solutions files'
