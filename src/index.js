@@ -30,24 +30,21 @@ async function run() {
       if (slnFiles.length > 0) {
         for(let i = 0; i < slnFiles.length; i++) {
           const slnFolder = path.dirname(slnFiles[i]);
-          await ExecScopeRun(homePath, command, slnFolder, apiKey, dsn);
+          await ExecScopeRun(homePath, command, slnFolder, dsn);
         }
         return;
       }
     } 
 
-    await ExecScopeRun(homePath, command, process.cwd(), apiKey, dsn);  
+    await ExecScopeRun(homePath, command, process.cwd(), dsn);  
 
   } catch (error) {
     core.setFailed(error.message);
   }
 }
 
-async function ExecScopeRun(homePath, command, cwd, apiKey, dsn) {
+async function ExecScopeRun(homePath, command, cwd, dsn) {
   let envVars = Object.assign({}, process.env);
-  if (apiKey) {
-    envVars[SCOPE_APIKEY] = apiKey;
-  }
   if (dsn) {
     envVars[SCOPE_DSN] = dsn;
   }

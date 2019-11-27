@@ -1,4 +1,5 @@
 name: 'scope-for-dotnet'
+author: 'Undefined Labs'
 description: 'Scope agent for dotnet'
 inputs:
   command:  # command to run inside the scope-run wrapper
