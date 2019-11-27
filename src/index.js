@@ -3,7 +3,6 @@ const exec = require('@actions/exec');
 const path = require('path')
 const fs = require('fs')
 
-const SCOPE_APIKEY = 'SCOPE_APIKEY';
 const SCOPE_DSN = 'SCOPE_DSN';
 
 async function run() {
@@ -11,12 +10,11 @@ async function run() {
     const homePath = process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE;
 
     const command = core.getInput('command') || 'dotnet test';
-    const apiKey = core.getInput('apikey') || process.env[SCOPE_APIKEY];
     const dsn = core.getInput('dsn') || process.env[SCOPE_DSN];
     const useSolutions = core.getInput('use-solutions') || true;
 
-    if (!dsn && !apiKey) {
-      throw Error('Cannot find the DSN or ApiKey');
+    if (!dsn) {
+      throw Error('Cannot find the Scope DSN');
     }
 
     console.log(`Command: ${command}`);
@@ -24,11 +22,8 @@ async function run() {
     if (dsn) {
       console.log(`DSN has been set.`);
     }
-    if (apiKey) {
-      console.log(`ApiKey has been set.`);
-    }
 
-    await exec.exec('dotnet tool install -g ScopeAgent.Runner --version 0.1.16-beta.1', null, { ignoreReturnCode: true });
+    await exec.exec('dotnet tool install -g ScopeAgent.Runner --version 0.1.16-beta.2', null, { ignoreReturnCode: true });
 
     if (useSolutions) {
       const slnFiles = findFileByExtension(process.cwd(), "sln");

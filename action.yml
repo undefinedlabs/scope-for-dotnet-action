@@ -4,14 +4,11 @@ inputs:
   command:  # command to run inside the scope-run wrapper
     description: 'Command to run inside the scope-run wrapper'
     required: false
-  apikey: # api key
-    description: 'Scope API key'
-    required: false
   dsn: # scope dsn
-    description: 'Scope DSN'
-    required: false
+    description: 'Scope dsn'
+    required: true
   use-solutions: # use solutions file
-    description: 'Use solutions files'
+    description: 'Run the scope-run command from the solutions file folder'
     required: false
     default: true
 runs:
