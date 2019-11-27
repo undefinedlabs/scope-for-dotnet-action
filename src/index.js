@@ -50,8 +50,9 @@ async function ExecScopeRun(homePath, command, cwd, dsn) {
   }
   let filename = `${homePath}/.dotnet/tools/scope-run`;
   if (process.platform === "win32") {
-    filename = `${homePath}\\.dotnet\\tools\\scope-run.exe`
+    filename = "scope-run";
   }
+  console.log("Platform:", process.platform);
   await exec.exec(filename, [ command ], {
     cwd: cwd,
     env: envVars
