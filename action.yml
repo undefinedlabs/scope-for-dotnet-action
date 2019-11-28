@@ -1,6 +1,6 @@
 name: 'Scope for .NET'
 author: 'Undefined Labs'
-description: ''
+description: 'Automatically instruments and runs your tests using the Scope .NET agent'
 inputs:
   command:  # command to run inside the scope-run wrapper
     description: 'Command to run inside the scope-run wrapper'
