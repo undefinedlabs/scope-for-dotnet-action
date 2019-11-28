@@ -1,12 +1,12 @@
-name: 'scope-for-dotnet'
+name: 'Scope for .NET'
 author: 'Undefined Labs'
-description: 'Scope agent for dotnet'
+description: 'Automatically instruments and runs your tests using the Scope .NET agent'
 inputs:
   command:  # command to run inside the scope-run wrapper
     description: 'Command to run inside the scope-run wrapper'
     required: false
   dsn: # scope dsn
-    description: 'Scope dsn'
+    description: 'Scope DSN'
     required: true
   use-solutions: # use solutions file
     description: 'Run the scope-run command from the solutions file folder'
