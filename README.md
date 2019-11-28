@@ -1,3 +1,4 @@
+![logo](scope_logo.svg)
 
 # Scope for .NET
 
