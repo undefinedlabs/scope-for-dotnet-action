@@ -1026,7 +1026,7 @@ async function run() {
   }
 }
 
-async function ExecScopeRun(homePath, command, cwd, dsn) {
+function ExecScopeRun(homePath, command, cwd, dsn) {
   let envVars = Object.assign({}, process.env);
   if (dsn) {
     envVars[SCOPE_DSN] = dsn;
@@ -1036,7 +1036,7 @@ async function ExecScopeRun(homePath, command, cwd, dsn) {
     filename = "scope-run";
   }
   console.log("Platform:", process.platform);
-  await exec.exec(filename, [ command ], {
+  return exec.exec(filename, [ command ], {
     cwd: cwd,
     env: envVars
   });
